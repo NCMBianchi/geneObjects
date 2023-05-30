@@ -22,6 +22,7 @@ Each subclass (i.e. *ProteinCodingGene*, *LncRNAGene* and *MicroRNAGene* classes
 | LncRNAGene          | RNA sequence      | character    |
 | MicroRNAGene        | microRNA ID       | character    |
 | MicroRNAGene        | microRNA sequence | character    |
+
 Examples of further subclasses would be *siRNA*, *snRNA*, *sncRNA* or *matureTranscript*.
 ### Methods: constructors and accessors
 This package also provides methods that act as **constructors** (i.e. *ProteinCodingGene()*, *LncRNAGene()* and *MicroRNAGene()* methods) for each of the three subclasses, based on each combination of shared slots and unique ones – as well as **accessors** (i.e. *getID()* and *setID()*) that allow for easy retrieval of the gene 'ID' for an existing object of either one of the subclasses, and for easy replacement of said gene 'ID', without the user having to access the variable directly (e.g. *gene@symbol*).
