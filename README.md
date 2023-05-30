@@ -12,6 +12,7 @@ The three subclasses inherit several information slots from the '*Gene*' class:
 | gene name       | character    |
 | description     | character    |
 | gene structure  | GRanges      |
+
 Each subclass (i.e. *ProteinCodingGene*, *LncRNAGene* and *MicroRNAGene* classes) instead has two unique information slots specific for it:
 | subclass            | slot              | type         |
 |---------------------|-------------------|--------------|
