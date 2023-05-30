@@ -1,0 +1,87 @@
+---
+title: "Working with Gene Objects in R using myGenePackage"
+author: "Niccolò C.M. Bianchi"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Working with Gene Objects in R using myGenePackage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r style, echo = FALSE, results = 'asis'}
+library(BiocStyle)
+```
+
+```{r, echo = FALSE}
+library(knitr)
+library(GenomicRanges)
+```
+
+```{r, echo = FALSE}
+library(geneObjects)
+```
+
+
+# Introduction
+
+The **r Rpackage("myGenePackage")** package provides classes for representing different types of gene objects in R and associated methods. The package defines a parent class **Gene** and three subclasses **ProteinCodingGene**, **LncRNAGene**, and **MicroRNAGene**. It also provides methods to get and set the ID of the genes and to compute the length of gene products.
+
+
+# Classes and Constructors
+
+The following object is built using the *GenomicRanges* BioConductor package.
+
+```{r}
+gene_structure <- GenomicRanges::GRanges(seqnames = "chr1", ranges = IRanges::IRanges(start = 5000, end = 6000), strand = "+")
+```
+
+## Protein-coding genes
+
+The **ProteinCodingGene** S4 class represents protein-coding genes. It can be created using the *ProteinCodingGene* constructor:
+
+```{r}
+# create a ProteinCodingGene object
+pc_gene <- ProteinCodingGene(ID = "ENSG000001", HUGO_symbol = "BRCA1", gene_name = "Breast cancer 1", description = "Breast cancer type 1 susceptibility protein", gene_structure = gene_structure, protein_ID = "ENSP000003", protein_sequence = "MENSDRNSIKVAV")
+```
+
+## Long non-coding RNA gene
+
+The **LncRNAGene** class represents long non-coding RNA genes. It can be created using the *LncRNAGene* constructor:
+
+```{r}
+# create a LncRNAGene object
+lnc_gene <- LncRNAGene(ID = "ENSG000002", HUGO_symbol = "LINC00001", gene_name = "Long intergenic non-protein coding RNA 1", description = "Long non-coding RNA", gene_structure = gene_structure, lncRNA_ID = "ENST000004", RNA_sequence = "ACUGCUAGCUAGUCA")
+```
+
+## MicroRNA gene
+
+The **MicroRNAGene** class represents microRNA genes. It can be created using the *MicroRNAGene* constructor:
+
+```{r}
+# create a MicroRNAGene object
+mir_gene <-  MicroRNAGene(ID = "ENSG000003", HUGO_symbol = "MIR00001", gene_name = "MicroRNA 1", description = "MicroRNA", gene_structure = gene_structure, microRNA_ID = "ENST000005", microRNA_seed_sequence = "UGAGGUAGUAGGUUGUAUGGUAG")
+```
+
+
+# Gene ID getter and setter
+
+The package provides generic functions to get and set the ID of a gene. Here is an example of how to use these functions:
+
+```{r}
+# set ID
+setID(pc_gene) <- "Gene1"
+
+# get ID
+getID(pc_gene)
+```
+
+
+# Length of gene product
+
+The **lengthProduct** function computes the length of the product of a gene. Here is an example of how to use this function:
+
+```{r}
+# compute length of gene product
+lengthProduct(pc_gene)
+```

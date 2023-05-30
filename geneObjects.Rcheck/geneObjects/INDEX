@@ -1,0 +1,13 @@
+Gene-class              Gene class
+LncRNAGene              Constructor function for LncRNAGene class
+LncRNAGene-class        Long non-coding RNA gene class
+MicroRNAGene            Constructor function for MicroRNAGene class
+MicroRNAGene-class      MicroRNA gene class
+ProteinCodingGene       Constructor function for ProteinCodingGene
+                        class
+ProteinCodingGene-class
+                        Protein-coding gene class
+geneObjects-package     geneObjects - provides a set of S4 classes for
+                        different gene types
+getID                   Generic getter for gene ID
+lengthProduct           Generic function for length of gene product

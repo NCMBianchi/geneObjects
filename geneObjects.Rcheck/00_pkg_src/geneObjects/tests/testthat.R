@@ -1,0 +1,5 @@
+library(testthat)
+library(GenomicRanges)
+library(IRanges)
+library(methods)
+test_check("geneObjects")

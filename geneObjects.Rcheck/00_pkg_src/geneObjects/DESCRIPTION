@@ -1,0 +1,20 @@
+Package: geneObjects
+Title: A Set of S4 Classes for Different Gene Types
+Version: 1.0.0
+Authors@R: 
+    person("Niccolò", "Bianchi", , "niccolo.bianchi2@studenti.unimi.it", role = c("aut", "cre"))
+Description: The geneObjects package implements several functions for handling various gene classes 
+    as objects with several slots based on Ensembl. It provides a way to represent different gene types 
+    (e.g., protein-coding genes, long non-coding RNAs, microRNAs) and manipulate them in a unified 
+    framework. It also provides various functions to access and modify the data stored in these objects.
+License: GPL (>= 2)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+VignetteBuilder: knitr
+Imports: GenomicRanges, IRanges, methods
+Suggests: knitr, testthat, BiocStyle
+NeedsCompilation: no
+Packaged: 2023-05-30 17:37:21 UTC; ncmbianchi
+Author: Niccolò Bianchi [aut, cre]
+Maintainer: Niccolò Bianchi <niccolo.bianchi2@studenti.unimi.it>

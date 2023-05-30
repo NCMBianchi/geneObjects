@@ -1,0 +1,349 @@
+
+R version 4.2.2 (2022-10-31) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "geneObjects"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('geneObjects')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("Gene-class")
+> ### * Gene-class
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Gene-class
+> ### Title: Gene class
+> ### Aliases: Gene-class
+> 
+> ### ** Examples
+> 
+> # Not usually instantiated directly, used as a superclass for other gene classes.
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("LncRNAGene-class")
+> ### * LncRNAGene-class
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: LncRNAGene-class
+> ### Title: Long non-coding RNA gene class
+> ### Aliases: LncRNAGene-class
+> 
+> ### ** Examples
+> 
+> gene_structure <- GenomicRanges::GRanges(seqnames = "chr1", ranges = IRanges::IRanges(start = 3000, end = 4000), strand = "-")
+> LncRNAGene(ID = "ENSG000002", HUGO_symbol = "LINC00001",
++            gene_name = "Long intergenic non-protein coding RNA 1",
++            description = "Long non-coding RNA",
++            gene_structure = gene_structure,
++            lncRNA_ID = "ENST000004", RNA_sequence = "ACUGCUAGCUAGUCA...")
+An object of class "LncRNAGene"
+Slot "lncRNA_ID":
+[1] "ENST000004"
+
+Slot "RNA_sequence":
+[1] "ACUGCUAGCUAGUCA..."
+
+Slot "ID":
+[1] "ENSG000002"
+
+Slot "HUGO_symbol":
+[1] "LINC00001"
+
+Slot "gene_name":
+[1] "Long intergenic non-protein coding RNA 1"
+
+Slot "description":
+[1] "Long non-coding RNA"
+
+Slot "gene_structure":
+GRanges object with 1 range and 0 metadata columns:
+      seqnames    ranges strand
+         <Rle> <IRanges>  <Rle>
+  [1]     chr1 3000-4000      -
+  -------
+  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("LncRNAGene")
+> ### * LncRNAGene
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: LncRNAGene
+> ### Title: Constructor function for LncRNAGene class
+> ### Aliases: LncRNAGene
+> 
+> ### ** Examples
+> 
+> gene_structure <- GenomicRanges::GRanges(seqnames = "chr1", ranges = IRanges::IRanges(3000, 4000), strand = "-")
+> LncRNAGene(ID = "ENSG000002", HUGO_symbol = "LINC00001",
++            gene_name = "Long intergenic non-protein coding RNA 1",
++            description = "Long non-coding RNA",
++            gene_structure = gene_structure,
++            lncRNA_ID = "ENST000004", RNA_sequence = "ACUGCUAGCUAGUCA...")
+An object of class "LncRNAGene"
+Slot "lncRNA_ID":
+[1] "ENST000004"
+
+Slot "RNA_sequence":
+[1] "ACUGCUAGCUAGUCA..."
+
+Slot "ID":
+[1] "ENSG000002"
+
+Slot "HUGO_symbol":
+[1] "LINC00001"
+
+Slot "gene_name":
+[1] "Long intergenic non-protein coding RNA 1"
+
+Slot "description":
+[1] "Long non-coding RNA"
+
+Slot "gene_structure":
+GRanges object with 1 range and 0 metadata columns:
+      seqnames    ranges strand
+         <Rle> <IRanges>  <Rle>
+  [1]     chr1 3000-4000      -
+  -------
+  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+
+> 
+> 
+> 
+> cleanEx()
+> nameEx("MicroRNAGene-class")
+> ### * MicroRNAGene-class
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: MicroRNAGene-class
+> ### Title: MicroRNA gene class
+> ### Aliases: MicroRNAGene-class
+> 
+> ### ** Examples
+> 
+> gene_structure <- GenomicRanges::GRanges(seqnames = "chr1", ranges = IRanges::IRanges(start = 5000, end = 6000), strand = "+")
+> MicroRNAGene(ID = "ENSG000003", HUGO_symbol = "MIR00001",
++              gene_name = "MicroRNA 1",
++              description = "MicroRNA",
++              gene_structure = gene_structure,
++              microRNA_ID = "ENST000005", microRNA_seed_sequence = "UGAGGUAGUAGGUUGUAUGGUAG")
+An object of class "MicroRNAGene"
+Slot "microRNA_ID":
+[1] "ENST000005"
+
+Slot "microRNA_seed_sequence":
+[1] "UGAGGUAGUAGGUUGUAUGGUAG"
+
+Slot "ID":
+[1] "ENSG000003"
+
+Slot "HUGO_symbol":
+[1] "MIR00001"
+
+Slot "gene_name":
+[1] "MicroRNA 1"
+
+Slot "description":
+[1] "MicroRNA"
+
+Slot "gene_structure":
+GRanges object with 1 range and 0 metadata columns:
+      seqnames    ranges strand
+         <Rle> <IRanges>  <Rle>
+  [1]     chr1 5000-6000      +
+  -------
+  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("MicroRNAGene")
+> ### * MicroRNAGene
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: MicroRNAGene
+> ### Title: Constructor function for MicroRNAGene class
+> ### Aliases: MicroRNAGene
+> 
+> ### ** Examples
+> 
+> gene_structure <- GenomicRanges::GRanges(seqnames = "chr1", ranges = IRanges::IRanges(5000, 6000), strand = "+")
+> MicroRNAGene(ID = "ENSG000003", HUGO_symbol = "MIR00001",
++              gene_name = "MicroRNA 1",
++              description = "MicroRNA",
++              gene_structure = gene_structure,
++              microRNA_ID = "ENST000005", microRNA_seed_sequence = "UGAGGUAGUAGGUUGUAUGGUAG")
+An object of class "MicroRNAGene"
+Slot "microRNA_ID":
+[1] "ENST000005"
+
+Slot "microRNA_seed_sequence":
+[1] "UGAGGUAGUAGGUUGUAUGGUAG"
+
+Slot "ID":
+[1] "ENSG000003"
+
+Slot "HUGO_symbol":
+[1] "MIR00001"
+
+Slot "gene_name":
+[1] "MicroRNA 1"
+
+Slot "description":
+[1] "MicroRNA"
+
+Slot "gene_structure":
+GRanges object with 1 range and 0 metadata columns:
+      seqnames    ranges strand
+         <Rle> <IRanges>  <Rle>
+  [1]     chr1 5000-6000      +
+  -------
+  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+
+> 
+> 
+> 
+> cleanEx()
+> nameEx("ProteinCodingGene-class")
+> ### * ProteinCodingGene-class
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: ProteinCodingGene-class
+> ### Title: Protein-coding gene class
+> ### Aliases: ProteinCodingGene-class
+> 
+> ### ** Examples
+> 
+> gene_structure <- GenomicRanges::GRanges(seqnames = "chr1", ranges = IRanges::IRanges(start = 1000, end = 2000), strand = "+")
+> ProteinCodingGene(ID = "ENSG000001", HUGO_symbol = "BRCA1",
++                   gene_name = "Breast cancer 1",
++                   description = "Breast cancer type 1 susceptibility protein",
++                   gene_structure = gene_structure,
++                   protein_ID = "ENSP000003", protein_sequence = "MENSDRNSIKVAV...")
+An object of class "ProteinCodingGene"
+Slot "protein_ID":
+[1] "ENSP000003"
+
+Slot "protein_sequence":
+[1] "MENSDRNSIKVAV..."
+
+Slot "ID":
+[1] "ENSG000001"
+
+Slot "HUGO_symbol":
+[1] "BRCA1"
+
+Slot "gene_name":
+[1] "Breast cancer 1"
+
+Slot "description":
+[1] "Breast cancer type 1 susceptibility protein"
+
+Slot "gene_structure":
+GRanges object with 1 range and 0 metadata columns:
+      seqnames    ranges strand
+         <Rle> <IRanges>  <Rle>
+  [1]     chr1 1000-2000      +
+  -------
+  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("ProteinCodingGene")
+> ### * ProteinCodingGene
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: ProteinCodingGene
+> ### Title: Constructor function for ProteinCodingGene class
+> ### Aliases: ProteinCodingGene
+> 
+> ### ** Examples
+> 
+> gene_structure <- GenomicRanges::GRanges(seqnames = "chr1", ranges = IRanges::IRanges(1000, 2000), strand = "+")
+> ProteinCodingGene(ID = "ENSG000001", HUGO_symbol = "BRCA1",
++                   gene_name = "Breast cancer 1",
++                   description = "Breast cancer type 1 susceptibility protein",
++                   gene_structure = gene_structure,
++                   protein_ID = "ENSP000003", protein_sequence = "MENSDRNSIKVAV...")
+An object of class "ProteinCodingGene"
+Slot "protein_ID":
+[1] "ENSP000003"
+
+Slot "protein_sequence":
+[1] "MENSDRNSIKVAV..."
+
+Slot "ID":
+[1] "ENSG000001"
+
+Slot "HUGO_symbol":
+[1] "BRCA1"
+
+Slot "gene_name":
+[1] "Breast cancer 1"
+
+Slot "description":
+[1] "Breast cancer type 1 susceptibility protein"
+
+Slot "gene_structure":
+GRanges object with 1 range and 0 metadata columns:
+      seqnames    ranges strand
+         <Rle> <IRanges>  <Rle>
+  [1]     chr1 1000-2000      +
+  -------
+  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.958 0.04 0.997 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')
